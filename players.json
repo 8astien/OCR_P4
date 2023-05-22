@@ -1,0 +1,30 @@
+[
+    {
+        "first_name": "test",
+        "last_name": "test",
+        "birth_date": "test",
+        "national_chess_id": "test",
+        "id": 1
+    },
+    {
+        "first_name": "bastien\u0153",
+        "last_name": "cauquil",
+        "birth_date": "27 juillet 1991",
+        "national_chess_id": "AB1234",
+        "id": 2
+    },
+    {
+        "first_name": "Henri",
+        "last_name": "truc",
+        "birth_date": "oui",
+        "national_chess_id": "EZ1234",
+        "id": 3
+    },
+    {
+        "first_name": "indent",
+        "last_name": "ation",
+        "birth_date": "pls",
+        "national_chess_id": "ER3456",
+        "id": 4
+    }
+]
