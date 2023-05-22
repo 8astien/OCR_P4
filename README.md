@@ -1,2 +1,1 @@
-# OCR_P4_CHESS
-# OCR_P4_CHESS
+# OCR_P4
