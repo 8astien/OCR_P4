@@ -10,7 +10,7 @@ class Player:
         self.national_chess_id = national_chess_id
 
 
-    def add_player(self):
+    def save_player(self):
         new_player = self.__dict__
         if not os.path.exists('players.json'):
             with open('players.json', 'w') as file:
