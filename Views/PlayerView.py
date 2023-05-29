@@ -23,11 +23,14 @@ class PlayerView:
                 print("Date de naissance invalide. Réessayez.")
 
         while True:
-            self.national_chess_id = input("Identifiant national d'échecs (AB12345) : ")
-            if self.is_valid_id(self.national_chess_id):
-                break
+            self.national_chess_id = input("Identifiant national d'échecs (AB12345, optionnel) : ")
+            if self.national_chess_id:  # si l'utilisateur a entré quelque chose
+                if not self.is_valid_id(self.national_chess_id):
+                    print("Identifiant national d'échecs invalide. Réessayez.")
+                else:
+                    break
             else:
-                print("Identifiant national d'échecs invalide. Réessayez.")
+                break
 
         return self.first_name, self.last_name, self.birth_date, self.national_chess_id
 
