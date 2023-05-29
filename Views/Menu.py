@@ -18,19 +18,20 @@ class Menu:
 
         player_controller = PlayerController()
 
-        if self.choice == '1':
-            player_controller.add_player()
-            self.main_menu()
+        match self.choice:
+            case '1':
+                player_controller.add_player()
+                self.main_menu()
+            case '2':
+                pass
+            case '3':
+                pass
+            case '0':
+                print("Au revoir!")
+                exit()
+            case _:
+                print("Choix non valide. Veuillez entrer un chiffre valide.")
+                self.main_menu()
 
-        elif self.choice == '2':
-            pass
-        elif self.choice == '3':
-            pass
 
-        elif self.choice == '0':
-            print("Au revoir!")
-            exit()
-        else:
-            print("Choix non valide. Veuillez entrer un chiffre valide.")
-            self.main_menu()
 
