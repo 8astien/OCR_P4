@@ -16,3 +16,4 @@ class PlayerController:
         self.first_name, self.last_name, self.birth_date, self.national_chess_id = self.playerView.get_player_info()
         self.player = Player(self.first_name, self.last_name, self.birth_date, self.national_chess_id)
         self.player.add_player()
+        print(f'\nJoueur ajouté à la base de donnée avec succès !')
