@@ -12,11 +12,11 @@ class Player:
 
     def save_player(self):
         new_player = self.__dict__
-        if not os.path.exists('players.json'):
-            with open('players.json', 'w') as file:
+        if not os.path.exists('data/players.json'):
+            with open('data/players.json', 'w') as file:
                 json.dump([new_player], file, indent=4)
         else:
-            with open('players.json', 'r+') as file:
+            with open('data/players.json', 'r+') as file:
                 players = json.load(file)
                 players.append(new_player)
                 file.seek(0)

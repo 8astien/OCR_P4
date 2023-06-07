@@ -1,0 +1,11 @@
+{
+    "name": "TEST1",
+    "location": "Test",
+    "start_date": "test",
+    "end_date": "test",
+    "rounds": "test",
+    "current_round": "test",
+    "round_list": [],
+    "player_list": [],
+    "description": ""
+}
