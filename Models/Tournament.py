@@ -22,8 +22,42 @@ class Tournament:
             os.makedirs('data/tournament')
 
         # Créer le chemin du fichier avec le nom du tournoi
-        file_path = 'data/tournament/{}.json'.format(self.name)
+        file_path = 'data/tournament/tournaments.json'
 
-        # Enregistrer le tournoi dans un fichier JSON
-        with open(file_path, 'w') as file:
-            json.dump(new_tournament, file, indent=4)
+        if not os.path.exists(file_path):
+            with open(file_path, 'w') as file:
+                json.dump([new_tournament], file, indent=4)
+        else:
+            with open(file_path, 'r+') as file:
+                existing_tournaments = json.load(file)
+                existing_tournaments.append(new_tournament)
+                file.seek(0)
+                file.truncate()
+                json.dump(existing_tournaments, file, indent=4)
+
+    def get_tournaments(self):
+        file_path = 'data/tournament/tournaments.json'
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as file:
+                tournaments = json.load(file)
+                return tournaments
+        else:
+            return print('Le fichier tournaments.json est introuvable')
+
+    def update_tournament(self, updated_tournament):
+        if os.path.exists('data/tournament/tournaments.json'):
+            with open('data/tournament/tournaments.json', 'r') as file:
+                tournaments = json.load(file)
+            for i, tournament in enumerate(tournaments):
+                # QUESTION MENTORAT ICI : RAJOUT ID OU NAME C'EST OK ?
+                if tournament['name'] == updated_tournament['name']:
+                    tournaments[i] = updated_tournament
+                    break
+            else:
+                print("Tournoi introuvable")
+                return
+
+            with open('data/tournament/tournaments.json', 'w') as file:
+                json.dump(tournaments, file, indent=4)
+        else:
+            print('Fichier tournaments.json introuvable')
