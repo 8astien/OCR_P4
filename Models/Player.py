@@ -22,3 +22,12 @@ class Player:
                 file.seek(0)
                 file.truncate()
                 json.dump(players, file, indent=4)
+
+    def get_players(self):
+        file_path = 'data/players.json'
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as file:
+                players = json.load(file)
+                return players
+        else:
+            return print('Fichier players.json introuvable')

@@ -1,7 +1,7 @@
-import re
+from Views.View import View
 
 
-class PlayerView:
+class PlayerView(View):
 
     def __init__(self):
         self.national_chess_id = None
@@ -10,17 +10,11 @@ class PlayerView:
         self.first_name = None
 
     def get_player_info(self):
-        self.first_name = input("Prénom: ")
-        self.last_name = input("Nom de famille: ")
+        self.first_name = self.get_valid_alpha_input("Prénom: ")
+        self.last_name = self.get_valid_alpha_input("Nom de famille: ")
 
-        # J'utilise des boucles While ici pour isoler les questions utilisateur
-        # et ne pas devoir recommencer l'intégralité de la boucle en cas d'errer d'input
-        while True:
-            self.birth_date = input("Date de naissance (JJ/MM/AAAA): ")
-            if self.is_valid_date(self.birth_date):
-                break
-            else:
-                print("Date de naissance invalide. Réessayez.")
+        # Appel de la méthode présente dans View.py
+        self.birth_date = self.get_valid_date_input("Date de naissance (JJ/MM/AAAA): ")
 
         while True:
             self.national_chess_id = input("Identifiant national d'échecs (AB12345, optionnel) : ")
@@ -34,8 +28,20 @@ class PlayerView:
 
         return self.first_name, self.last_name, self.birth_date, self.national_chess_id
 
-    def is_valid_date(self, date):
-        return re.fullmatch(r'\d{2}/\d{2}/\d{4}', date) is not None
+    def select_player(self, players):
+        print("\nSélectionnez un joueur : ")
+        players_reversed = list(reversed(players))
+        for i, player in enumerate(players_reversed):
+            print(
+                f"{i + 1} - Joueur : {player['first_name']} {player['last_name']} - Né le {player['birth_date']} - ID: {player['national_chess_id']}")
 
-    def is_valid_id(self, id):
-        return re.fullmatch(r'[A-Za-z]{2}\d{5}', id) is not None
+        while True:
+            try:
+                player_index = int(input("\nEntrez le numéro du joueur que vous voulez sélectionner : ")) - 1
+                if player_index < 0 or player_index >= len(players_reversed):
+                    print("Numéro de joueur invalide. Veuillez entrer un numéro de joueur valide.")
+                else:
+                    return len(players) - 1 - player_index
+            except ValueError:
+                print("Entrée invalide. Veuillez entrer un numéro.")
+

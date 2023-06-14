@@ -4,5 +4,17 @@
         "last_name": "Doe",
         "birth_date": "01/01/1999",
         "national_chess_id": "AB12345"
+    },
+    {
+        "first_name": "",
+        "last_name": "",
+        "birth_date": "01/01/0111",
+        "national_chess_id": ""
+    },
+    {
+        "first_name": "",
+        "last_name": "",
+        "birth_date": "01/01/0101",
+        "national_chess_id": ""
     }
 ]
