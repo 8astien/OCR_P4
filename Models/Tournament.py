@@ -1,9 +1,11 @@
 import os
 import json
+from Models.Model import Model
 
-class Tournament:
+class Tournament(Model):
     def __init__(self, name, location, start_date, end_date, rounds=4, current_round=1,
                  round_list=[], player_list=[], description=""):
+        self.id = self.get_new_id('data/tournament/tournaments.json')
         self.name = name
         self.location = location
         self.start_date = start_date
@@ -13,7 +15,6 @@ class Tournament:
         self.round_list = round_list
         self.player_list = player_list
         self.description = description
-
     def save_tournament(self):
         new_tournament = self.__dict__
 
@@ -49,8 +50,8 @@ class Tournament:
             with open('data/tournament/tournaments.json', 'r') as file:
                 tournaments = json.load(file)
             for i, tournament in enumerate(tournaments):
-                # QUESTION MENTORAT ICI : RAJOUT ID OU NAME C'EST OK ?
-                if tournament['name'] == updated_tournament['name']:
+                # On utilise maintenant l'ID pour vérifier le bon tournoi
+                if tournament['id'] == updated_tournament['id']:
                     tournaments[i] = updated_tournament
                     break
             else:
@@ -61,3 +62,4 @@ class Tournament:
                 json.dump(tournaments, file, indent=4)
         else:
             print('Fichier tournaments.json introuvable')
+

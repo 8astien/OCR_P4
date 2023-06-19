@@ -1,14 +1,15 @@
 import json
 import os
+from Models.Model import Model
 
 
-class Player:
+class Player(Model):
     def __init__(self, first_name, last_name, birth_date, national_chess_id):
+        self.id = self.get_new_id('data/players.json')
         self.first_name = first_name
         self.last_name = last_name
         self.birth_date = birth_date
         self.national_chess_id = national_chess_id
-
 
     def save_player(self):
         new_player = self.__dict__

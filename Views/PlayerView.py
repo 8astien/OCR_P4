@@ -33,7 +33,7 @@ class PlayerView(View):
         players_reversed = list(reversed(players))
         for i, player in enumerate(players_reversed):
             print(
-                f"{i + 1} - Joueur : {player['first_name']} {player['last_name']} - Né le {player['birth_date']} - ID: {player['national_chess_id']}")
+                f"{i + 1} - {player['first_name']} {player['last_name']} - Né le {player['birth_date']} - ID: {player['national_chess_id']}")
 
         while True:
             try:

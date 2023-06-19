@@ -10,7 +10,7 @@ class View:
         return re.fullmatch(r'[A-Za-z]{2}\d{5}', id) is not None
 
     def is_valid_alpha(self, input_string):
-        return re.fullmatch(r'[A-Za-z]{2,}', input_string) is not None
+        return re.fullmatch(r'[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}', input_string) is not None
 
     def get_valid_date_input(self, prompt):
         while True:

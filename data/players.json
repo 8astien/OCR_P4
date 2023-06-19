@@ -1,20 +1,72 @@
 [
     {
-        "first_name": "Test",
+        "id": 1,
+        "first_name": "John",
         "last_name": "Doe",
-        "birth_date": "01/01/1999",
+        "birth_date": "15/03/1990",
         "national_chess_id": "AB12345"
     },
     {
-        "first_name": "",
-        "last_name": "",
-        "birth_date": "01/01/0111",
-        "national_chess_id": ""
+        "id": 2,
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "birth_date": "02/06/1995",
+        "national_chess_id": "CD67890"
     },
     {
-        "first_name": "",
-        "last_name": "",
-        "birth_date": "01/01/0101",
-        "national_chess_id": ""
+        "id": 3,
+        "first_name": "Éléonore",
+        "last_name": "Dupont",
+        "birth_date": "12/08/1988",
+        "national_chess_id": "EF12345"
+    },
+    {
+        "id": 4,
+        "first_name": "Jean-Luc",
+        "last_name": "Martin",
+        "birth_date": "25/11/1992",
+        "national_chess_id": "GH67890"
+    },
+    {
+        "id": 5,
+        "first_name": "Marie",
+        "last_name": "Lefèvre",
+        "birth_date": "05/04/1997",
+        "national_chess_id": "IJ12345"
+    },
+    {
+        "id": 6,
+        "first_name": "Antoine",
+        "last_name": "Gagnon",
+        "birth_date": "18/09/1991",
+        "national_chess_id": "KL67890"
+    },
+    {
+        "id": 7,
+        "first_name": "Camille",
+        "last_name": "Rousseau",
+        "birth_date": "30/12/1996",
+        "national_chess_id": "MN12345"
+    },
+    {
+        "id": 8,
+        "first_name": "Charlotte",
+        "last_name": "Blanchard",
+        "birth_date": "09/02/1994",
+        "national_chess_id": "OP67890"
+    },
+    {
+        "id": 9,
+        "first_name": "Lucas",
+        "last_name": "Leroy",
+        "birth_date": "21/07/1993",
+        "national_chess_id": "QR12345"
+    },
+    {
+        "id": 10,
+        "first_name": "Manon",
+        "last_name": "Fournier",
+        "birth_date": "14/05/1998",
+        "national_chess_id": "ST67890"
     }
 ]
