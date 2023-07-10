@@ -1,5 +1,6 @@
 from Controllers.PlayerController import PlayerController
 from Controllers.TournamentController import TournamentController
+from Controllers.RoundsController import RoundsController
 from Views.Menu import Menu
 
 
@@ -8,6 +9,7 @@ class MenuController:
         self.menu = Menu()
         self.player_controller = PlayerController()
         self.tournament_controller = TournamentController()
+        self.rounds_controller = RoundsController()
 
     def user_choice(self):
         choice = self.menu.main_menu()
@@ -21,6 +23,9 @@ class MenuController:
                 self.user_choice()
             case '3':
                 self.tournament_controller.add_player_to_tournament()
+                self.user_choice()
+            case '4':
+                self.rounds_controller.play_round()
                 self.user_choice()
             case '0':
                 print("Au revoir!")

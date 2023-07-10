@@ -15,7 +15,7 @@
     },
     {
         "id": 3,
-        "first_name": "Éléonore",
+        "first_name": "\u00c9l\u00e9onore",
         "last_name": "Dupont",
         "birth_date": "12/08/1988",
         "national_chess_id": "EF12345"
@@ -30,7 +30,7 @@
     {
         "id": 5,
         "first_name": "Marie",
-        "last_name": "Lefèvre",
+        "last_name": "Lef\u00e8vre",
         "birth_date": "05/04/1997",
         "national_chess_id": "IJ12345"
     },
@@ -68,5 +68,12 @@
         "last_name": "Fournier",
         "birth_date": "14/05/1998",
         "national_chess_id": "ST67890"
+    },
+    {
+        "id": 11,
+        "first_name": "Bastien",
+        "last_name": "Cauquil",
+        "birth_date": "27/07/1991",
+        "national_chess_id": "ZE12345"
     }
 ]

@@ -13,7 +13,7 @@ class TournamentController:
 
     def create_tournament(self):
         name, location, start_date, end_date, rounds, description = self.tournamentView.get_tournament_info()
-        self.tournament = Tournament(name, location, start_date, end_date, rounds, description)
+        self.tournament = Tournament(name=name, location=location, start_date=start_date, end_date=end_date, rounds=rounds, current_round=1, description=description)
         self.tournament.save_tournament()
 
     def add_player_to_tournament(self):
@@ -33,6 +33,13 @@ class TournamentController:
 
         if selected_tournament is None:
             print('Tournoi introuvable')
+            return
+        
+        # Verification de tournoi complet
+        registered_players = len(selected_tournament['player_list'])
+        max_players = selected_tournament['rounds'] * 2
+        if registered_players >= max_players:
+            print('Le tournoi est complet.')
             return
 
         # Boucle pour la sélection du joueur
@@ -55,5 +62,4 @@ class TournamentController:
                     add_another = input("Souhaitez-vous ajouter un nouveau joueur à ce tournoi ? o/n: ")
                     if add_another.lower() != 'o':
                         break  # Sortir de la boucle après avoir ajouté le joueur
-
 

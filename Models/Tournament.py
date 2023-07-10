@@ -15,6 +15,7 @@ class Tournament(Model):
         self.round_list = round_list
         self.player_list = player_list
         self.description = description
+    
     def save_tournament(self):
         new_tournament = self.__dict__
 
