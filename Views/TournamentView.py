@@ -18,7 +18,7 @@ class TournamentView(View):
         self.start_date = self.get_valid_date_input("Date de début (JJ/MM/AAAA): ")
         self.end_date = self.get_valid_date_input("Date de fin (JJ/MM/AAAA): ")
 
-        self.rounds = input("Nombre de tours (optionnel, défaut à 4): ") or 4  # IF EMPTY, SET TO 4
+        self.rounds = self.get_valid_int_input("Nombre de tours (optionnel, défaut à 4): ", 4) # IF EMPTY, SET TO 4
         self.description = input("Description du tournoi (optionnel): ")
 
         return self.name, self.location, self.start_date, self.end_date, self.rounds, self.description
@@ -27,9 +27,10 @@ class TournamentView(View):
         print("\nSélectionnez un tournoi : ")
         tournaments_reversed = list(reversed(tournaments))
         for i, tournament in enumerate(tournaments_reversed):
+            registered_players = len(tournament['player_list'])
+            max_players = tournament['rounds'] * 2
             print(
-                f"{i + 1}. {tournament['name']} - {tournament['location']} - {tournament['start_date']} - {tournament['end_date']} - Rounds: {tournament['rounds']}")
-
+                f"{i + 1} - {tournament['name']} à {tournament['location']} du {tournament['start_date']} au {tournament['end_date']} - Rounds: {tournament['rounds']} - Inscrits: {registered_players}/{max_players}")
         while True:
             try:
                 tournament_index = int(input("\nEntrez le numéro du tournoi que vous voulez sélectionner : ")) - 1
